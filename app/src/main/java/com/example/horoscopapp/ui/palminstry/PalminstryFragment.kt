@@ -9,8 +9,9 @@ import com.example.horoscopapp.R
 import com.example.horoscopapp.databinding.FragmentHoroscopeBinding
 import com.example.horoscopapp.databinding.FragmentLuckBinding
 import com.example.horoscopapp.databinding.FragmentPalminstryBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class PalminstryFragment : Fragment() {
 
     //Aqui el binding es un poco distinto al de las activities

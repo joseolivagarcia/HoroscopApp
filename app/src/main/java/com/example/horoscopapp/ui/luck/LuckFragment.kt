@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import com.example.horoscopapp.R
 import com.example.horoscopapp.databinding.FragmentHoroscopeBinding
 import com.example.horoscopapp.databinding.FragmentLuckBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class LuckFragment : Fragment() {
 
     //Aqui el binding es un poco distinto al de las activities
