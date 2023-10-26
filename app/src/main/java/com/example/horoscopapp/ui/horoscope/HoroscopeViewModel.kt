@@ -21,7 +21,9 @@ class HoroscopeViewModel @Inject constructor() : ViewModel() {
     //ahora creo el metodo que se ejecuta nada mas llamar al viewmodel
     init {
         _horoscope.value = listOf(
-            HoroscopeInfo.Aries,HoroscopeInfo.Tauro,HoroscopeInfo.Geminis
+            HoroscopeInfo.Aquarius,HoroscopeInfo.Aries,HoroscopeInfo.Cancer,HoroscopeInfo.Capricornio,HoroscopeInfo.Escorpio,
+            HoroscopeInfo.Geminis,HoroscopeInfo.Leo,HoroscopeInfo.Libra,HoroscopeInfo.Piscis,HoroscopeInfo.Sagitario,
+            HoroscopeInfo.Tauro,HoroscopeInfo.Virgo
         )
     }
 
