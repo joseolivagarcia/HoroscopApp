@@ -1,6 +1,7 @@
 package com.example.horoscopapp.ui.horoscope
 
 import androidx.lifecycle.ViewModel
+import com.example.horoscopapp.data.providers.HoroscopeProvider
 import com.example.horoscopapp.domain.model.HoroscopeInfo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -8,7 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class HoroscopeViewModel @Inject constructor() : ViewModel() {
+class HoroscopeViewModel @Inject constructor(horoscopeProvider: HoroscopeProvider) : ViewModel() {
 
     /*
     * creo una primera var privada para que no se pueda acceder desde fuera del viewmodel.
@@ -20,11 +21,7 @@ class HoroscopeViewModel @Inject constructor() : ViewModel() {
 
     //ahora creo el metodo que se ejecuta nada mas llamar al viewmodel
     init {
-        _horoscope.value = listOf(
-            HoroscopeInfo.Aquarius,HoroscopeInfo.Aries,HoroscopeInfo.Cancer,HoroscopeInfo.Capricornio,HoroscopeInfo.Escorpio,
-            HoroscopeInfo.Geminis,HoroscopeInfo.Leo,HoroscopeInfo.Libra,HoroscopeInfo.Piscis,HoroscopeInfo.Sagitario,
-            HoroscopeInfo.Tauro,HoroscopeInfo.Virgo
-        )
+        _horoscope.value = horoscopeProvider.getHoroscopes() //igualo la lista con los objetos que obtengo del provider
     }
 
 }
