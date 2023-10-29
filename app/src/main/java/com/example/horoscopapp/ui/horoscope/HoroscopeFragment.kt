@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.horoscopapp.databinding.FragmentHoroscopeBinding
@@ -45,11 +46,14 @@ class HoroscopeFragment : Fragment() {
 
     private fun initList() {
         horoscopeAdapter = HoroscopeAdapter(onItemSelected = {
-            Toast.makeText(
+            findNavController().navigate(
+                HoroscopeFragmentDirections.actionHoroscopeFragmentToHoroscopeDetailActivity()
+            )
+           /* Toast.makeText(
                 context,
                 "has pulsado " + getString(it.name),
                 Toast.LENGTH_SHORT
-            ).show()
+            ).show()*/
         })
 
         binding.rvhoroscope.apply {
