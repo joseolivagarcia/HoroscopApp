@@ -15,7 +15,7 @@ class HoroscopeDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHoroscopeDetailBinding
     private val horoscopeDetailViewModel: HoroscopeDetailViewModel by viewModels()
 
-    private val args: HoroscopeDetailActivityArgs by navArgs()
+    private val args: HoroscopeDetailActivityArgs by navArgs() //en esta var recupero el signo que pase al pulsar sobre el
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHoroscopeDetailBinding.inflate(layoutInflater)
